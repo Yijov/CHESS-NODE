@@ -6,7 +6,7 @@
 
     THe user can create an invitation links witch he can send to non registerd friend in order to play.
 
-![Customers page](./docs/design/GamePageMovileView.png "Game Page Movile View")
+![Game Page Movile View](./_docs/design/GamePageMovileView.png "Game Page Movile View")
 
 ## To devlop
 
