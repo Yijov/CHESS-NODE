@@ -1,0 +1,12 @@
+#game-page {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+  border: 2px solid white;
+  overflow: hidden;
+}
+
+@import "../menu/menu";
+@import "../chat/chatWindow";
+@import "../clock/clock";

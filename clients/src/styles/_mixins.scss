@@ -1,0 +1,39 @@
+@mixin greenButton {
+  background-color: #2eb82e;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@mixin BlueButton {
+  background-color: #1a1aff;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+@mixin DarkButton {
+  background-color: $color_main;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+@mixin MidSizeButton {
+  width: 6rem;
+}
+
+@mixin SmallButton {
+  width: 4rem;
+}
+
+@mixin microButton {
+  width: 2rem;
+}

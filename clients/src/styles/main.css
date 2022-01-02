@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow: scroll;
+  background-color: whitesmoke;
+}
+
+#page-footer {
+  height: 4rem;
+  width: 100%;
+  background-color: #001433;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#page-footer #footer-image {
+  height: 4rem;
+  margin: auto;
+}
+
+#page-header {
+  height: 4rem;
+  width: 100%;
+  background-color: #001433;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#page-header #header-image {
+  height: 4rem;
+  margin: auto;
+}
+
+#game-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 2px solid white;
+  overflow: hidden;
+}
+
+#game-room_menu {
+  height: 2.5rem;
+  width: 100%;
+  margin-bottom: 3px;
+  color: lightgray;
+  background-color: #001433;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+#chat_container {
+  height: 13rem;
+  width: 100vw;
+  max-width: 380px;
+  border-radius: 5px;
+  background-color: white;
+  border: 4px solid #001433;
+  border-bottom: 4px solid #001433;
+}
+
+#chat_container #chat-message-box {
+  height: 84%;
+  overflow: scroll;
+  width: 100%;
+  border: 1px solid #001433;
+}
+
+#chat_container #chat-message-box .received-message,
+#chat_container #chat-message-box .sent-message {
+  width: 60%;
+  padding: 0.5rem;
+  padding-left: 1.5rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #001433;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#chat_container #chat-message-box .received-message {
+  margin-left: 3.5rem;
+  background-color: lightgray;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+#chat_container #chat_input_form {
+  height: 2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0%;
+}
+
+#chat_container #chat_input_form #chat-message_input {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 2rem;
+  width: 86%;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding-left: 5px;
+  overflow: auto;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  display: inline;
+}
+
+#chat_container #chat_input_form button {
+  background-color: #001433;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 0.4rem;
+  cursor: pointer;
+  width: 3.3rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#chat_container #chat_input_form button .sendicon {
+  font-size: 1.5rem;
+}
+
+#clock {
+  border: 2px solid gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.5rem;
+  width: 99%;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: auto;
+  margin-top: 3px;
+}
+
+#clock #white-time,
+#clock #black-time,
+#clock #resignation_buttom,
+#clock #draw-offer_buttom {
+  height: 100%;
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#clock #white-time,
+#clock #draw-offer_buttom {
+  background-color: white;
+  color: black;
+}
+
+#clock #black-time,
+#clock #resignation_buttom {
+  background-color: black;
+  color: white;
+}
+
+#clock #draw-offer_buttom {
+  background-color: #001433;
+  color: lightgray;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#clock #resignation_buttom {
+  color: lightgray;
+  background-color: #001433;
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,46 @@
+#clock {
+  border: 2px solid gray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 2.5rem;
+  width: 99%;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: auto;
+  margin-top: 3px;
+
+  #white-time,
+  #black-time,
+  #resignation_buttom,
+  #draw-offer_buttom {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #white-time,
+  #draw-offer_buttom {
+    background-color: white;
+    color: black;
+  }
+  #black-time,
+  #resignation_buttom {
+    background-color: black;
+    color: white;
+  }
+  #draw-offer_buttom {
+    background-color: $color_main;
+    color: $icon-color;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  #resignation_buttom {
+    color: $icon-color;
+    background-color: $color_main;
+    cursor: pointer;
+  }
+}

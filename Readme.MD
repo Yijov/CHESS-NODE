@@ -33,11 +33,11 @@
 - [ ] link generation functionality
 - [ ] change Board orientation function
 - [ ] tostify/comunication functionality
-- [ ] pulir colores, hoover effects
+- [ ] colors, hoover effects
 - [ ] Desktop view
 - [ ] clock funtionality
 - [ ] imagenes de portada readme
 
 - [ ] Promotion selection
-- [ ] Colector de basura de cache
+- [ ] Cache garbage collector
 - [ ] sounds functionality

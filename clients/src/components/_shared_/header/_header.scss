@@ -1,0 +1,12 @@
+#page-header {
+  height: 4rem;
+  width: 100%;
+  background-color: $color_background;
+  display: flex;
+  justify-content: center;
+
+  #header-image {
+    height: 4rem;
+    margin: auto;
+  }
+}
