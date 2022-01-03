@@ -27,23 +27,6 @@
   background-color: whitesmoke;
 }
 
-#page-footer {
-  height: 4rem;
-  width: 100%;
-  background-color: #001433;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#page-footer #footer-image {
-  height: 4rem;
-  margin: auto;
-}
-
 #page-header {
   height: 4rem;
   width: 100%;
@@ -59,6 +42,166 @@
 #page-header #header-image {
   height: 4rem;
   margin: auto;
+}
+
+#home-page {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  background-color: #001433;
+}
+
+#home-page h2 {
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+}
+
+#home-page p {
+  font-size: 1.3rem;
+  width: 200px;
+  text-align: center;
+}
+
+#home-page button {
+  width: 200px;
+  height: 40px;
+  padding: 0.1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+#home-page button:hover {
+  background-color: white;
+}
+
+#room-link-pannel {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 20rem;
+  width: 95%;
+  max-width: 22rem;
+  color: black;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 3px;
+}
+
+#room-link-pannel #message {
+  width: 80%;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+#room-link-pannel #generated-link-container {
+  width: 90%;
+  height: 3.5rem;
+  border: 1px solid #001433;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+#room-link-pannel #generated-link-container #generated-link {
+  font-size: 1.1rem;
+  height: 100%;
+  width: 80%;
+  color: blue;
+  text-align: center;
+  word-break: break-all;
+  padding: 5px;
+  background-color: white;
+}
+
+#room-link-pannel #generated-link-container #copy-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid black;
+  height: 100%;
+  width: 20%;
+  margin-top: 0;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+#room-link-pannel #generated-link-container #copy-button:focus .icon,
+#room-link-pannel #generated-link-container #copy-button:focus p {
+  color: blue;
+}
+
+#room-link-pannel #generated-link-container #copy-button p {
+  font-size: 1rem;
+  color: #001433;
+}
+
+#room-link-pannel #generated-link-container #copy-button .icon {
+  font-size: 30px;
+  color: #001433;
+}
+
+#room-link-pannel button {
+  width: 100px;
+  height: 40px;
+  padding: 0.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: #001433;
+  color: blanchedalmond;
+}
+
+#room-link-pannel button:hover {
+  background-color: white;
 }
 
 #game-page {
@@ -244,5 +387,22 @@
   color: lightgray;
   background-color: #001433;
   cursor: pointer;
+}
+
+#page-footer {
+  height: 4rem;
+  width: 100%;
+  background-color: #001433;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#page-footer #footer-image {
+  height: 4rem;
+  margin: auto;
 }
 /*# sourceMappingURL=main.css.map */

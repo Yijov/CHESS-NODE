@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "../../../assets/images/banner.svg";
 
-export const Header: React.FC = () => {
+const Header: React.FC = () => {
   return (
     <div id="page-header">
       <h1>
@@ -10,3 +10,4 @@ export const Header: React.FC = () => {
     </div>
   );
 };
+export default Header;

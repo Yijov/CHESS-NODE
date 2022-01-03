@@ -1,14 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Header } from "../components/_shared_/header/Header";
-import { GamePage } from "../components/game_room/page/GamePage";
-import { Footer } from "../components/_shared_/footer/Footer";
+import { Header, HomePage, GamePage, Footer } from "../components";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/gameroom/:roomid" element={<GamePage />} />
       </Routes>
       <Footer />

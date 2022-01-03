@@ -5,7 +5,7 @@ import events from "../../../socket/Events";
 import Chat from "../chat/ChatWindow";
 import Board from "../board/Board";
 
-export const GamePage: React.FC = () => {
+const GamePage: React.FC = () => {
   //join the corresponding game room as soon as entered
   const params = useParams();
   useEffect(() => {
@@ -20,3 +20,5 @@ export const GamePage: React.FC = () => {
     </div>
   );
 };
+
+export default GamePage;

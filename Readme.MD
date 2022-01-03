@@ -3,6 +3,8 @@
     Online multiplayer chess game with live chat.
 
 ![Game Page Movile View](./_docs/design/GamePageMovileView.png "Game Page Movile View")
+![Game Page Movile View](./_docs/design/HomePageDesktopLinkView.png "Game Page Movile View")
+![Game Page Movile View](./_docs/design/HomePageDesktopView.png "Game Page Movile View")
 
 ## Funtionality
 
@@ -29,8 +31,6 @@
 - [ ] resignation functionality
 - [ ] draw offer and accept functionality
 - [ ] game over functionality
-- [ ] home page
-- [ ] link generation functionality
 - [ ] change Board orientation function
 - [ ] tostify/comunication functionality
 - [ ] colors, hoover effects

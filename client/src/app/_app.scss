@@ -9,6 +9,7 @@
   background-color: $color_soft_background;
 }
 
-@import "../components/_shared_/footer/footer";
 @import "../components/_shared_/header/header";
+@import "../components/home/page/homePage";
 @import "../components/game_room/page/gamePage";
+@import "../components/_shared_/footer/footer";
