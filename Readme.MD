@@ -3,7 +3,7 @@
     Online multiplayer chess game with live chat.
 
 ![Game Page Movile View](./_docs/design/GamePageMovileView.png "Game Page Movile View")
-![Game Page Movile View](./_docs/design/HomePageDesktopLinkView.png "Game Page Movile View")
+![Game Page Movile View](./_docs/design/HomePageMovileLinkView.png "Game Page Movile View")
 ![Game Page Movile View](./_docs/design/HomePageDesktopView.png "Game Page Movile View")
 
 ## Funtionality
