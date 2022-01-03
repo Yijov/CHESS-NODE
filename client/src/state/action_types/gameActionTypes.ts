@@ -1,15 +1,7 @@
 enum gameActionType {
-  JOIN_GAME = "JOIN GAME",
   MOVE = "MOVE",
   UPDATE_BOARD = "UPDATE BOARD",
-  NEW_GAME = "NEW GAME",
-  RESIGNATION = "RESIGNATION",
-  DRAW_OFFER = "DREAW OFFER",
-  DECLINE_DRAW = "DREAW OFFER",
-  ACCEPT_DRAW = "ACCEPT DRAW",
-  EXIT_GAME = "EXIT GAME",
-  GAME_OVER = "GAME OVER",
-  DISCONECT = "disconnect",
+  ROTATE_BOARD = "ROTATE BOARD",
 }
 
 export default gameActionType;

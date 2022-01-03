@@ -9,6 +9,10 @@ interface UpdateAction {
   payload: string;
 }
 
-type GameAction = MoveAction | UpdateAction;
+interface RotateBoardAction {
+  type: gameActionType.ROTATE_BOARD;
+}
+
+type GameAction = MoveAction | UpdateAction | RotateBoardAction;
 
 export default GameAction;

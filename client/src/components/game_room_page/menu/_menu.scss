@@ -9,4 +9,11 @@
   justify-content: space-around;
   font-weight: 600;
   font-size: 1.7rem;
+  .icon {
+    color: $icon-color;
+    cursor: pointer;
+    &:hover {
+      color: white;
+    }
+  }
 }

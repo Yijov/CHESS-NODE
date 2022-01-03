@@ -21,26 +21,24 @@
     align-items: center;
   }
 
-  #white-time,
-  #draw-offer_buttom {
-    background-color: white;
+  #white-time {
+    background-color: whitesmoke;
     color: black;
   }
-  #black-time,
-  #resignation_buttom {
+  #black-time {
     background-color: black;
-    color: white;
+    color: whitesmoke;
   }
+  #resignation_buttom,
   #draw-offer_buttom {
     background-color: $color_main;
     color: $icon-color;
-    font-size: 2rem;
     cursor: pointer;
+    &:hover {
+      color: white;
+    }
   }
-
-  #resignation_buttom {
-    color: $icon-color;
-    background-color: $color_main;
-    cursor: pointer;
+  #draw-offer_buttom {
+    font-size: 2rem;
   }
 }

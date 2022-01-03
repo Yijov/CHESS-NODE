@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   border: 2px solid white;
   overflow: hidden;
 }
@@ -10,3 +10,11 @@
 @import "../menu/menu";
 @import "../chat/chatWindow";
 @import "../clock/clock";
+
+@media screen and (min-width: 840px) {
+  #game-page {
+    flex-direction: row;
+    justify-content: center;
+    background-color: $color_base;
+  }
+}

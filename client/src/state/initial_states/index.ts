@@ -1,5 +1,5 @@
-import chatInitialState from "./chatInitialState";
-import GameInitialState from "./GameInitialState";
+import chatInitialState from "./defaults/chatInitialState";
+import GameInitialState from "./defaults/GameInitialState";
 
 const AppInitialState = { chat: chatInitialState, game: GameInitialState };
 

@@ -47,6 +47,7 @@ const Chat: React.FC = () => {
           autoComplete="off"
           onChange={HANDLE_CHAT_INPUT}
           value={CHAT_INPUT_VALUE}
+          required
         />
       </form>
     </div>

@@ -13,8 +13,9 @@ const ChessClass = require("chess.js");
 export default function useGameMovement(URLroomid: string) {
   //chess possition object
   const [Chess] = useState<ChessInstance>(new ChessClass());
+
   //importing the game state from the store
-  const gameState = useSelector((state: State) => state.game);
+  const gameState = useSelector((state: State) => state.game.position);
   const dispatch = useDispatch();
   const { Move } = bindActionCreators(GameActionCreators, dispatch);
   const MOVE_PROCESOR = new MoveProcesor(Move, Chess);

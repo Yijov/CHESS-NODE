@@ -5,11 +5,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: scroll;
+  overflow: hidden;
   background-color: $color_soft_background;
 }
 
 @import "../components/_shared_/header/header";
-@import "../components/home/page/homePage";
-@import "../components/game_room/page/gamePage";
+@import "../components/home_page/page/homePage";
+@import "../components/game_room_page/page/gamePage";
 @import "../components/_shared_/footer/footer";
