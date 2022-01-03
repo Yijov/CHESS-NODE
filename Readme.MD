@@ -20,8 +20,8 @@
 - [x] UI is respondive
 
 ![Game Page Movile View](./_docs/design/GamePageMovileView.png "Game Page Movile View")
-
 ![Home Page Movile View](./_docs/design/HomePageMovileLinkView.png "Home Page Movile View")
+
 ![Game Page Desktop View](./_docs/design/GamePageDesktopView.png "Game Page Desktop View")
 ![Home Page Desktop View](./_docs/design/HomePageDesktopView.png "Home Page Desktop View")
 
