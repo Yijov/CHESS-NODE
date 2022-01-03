@@ -7,11 +7,6 @@
     1. RUN `npm run dev` in the server forder
     2. RUN `npm npm start` in the client folder
 
-![Game Page Movile View](./_docs/design/GamePageMovileView.png "Game Page Movile View")
-![Home Page Movile View](./_docs/design/HomePageMovileLinkView.png "Home Page Movile View")
-![Game Page Desktop View](./_docs/design/GamePageDesktopView.png "Game Page Desktop View")
-![Home Page Desktop View](./_docs/design/HomePageDesktopView.png "Home Page Desktop View")
-
 ## Funtionality
 
 - [x] Users can play chess online with each other
@@ -23,6 +18,12 @@
 - [x] Users can send and accept rematch offers
 - [x] The pieces can be moved via drag and drop or by click on individual squares
 - [x] UI is respondive
+
+![Game Page Movile View](./_docs/design/GamePageMovileView.png "Game Page Movile View")
+
+![Home Page Movile View](./_docs/design/HomePageMovileLinkView.png "Home Page Movile View")
+![Game Page Desktop View](./_docs/design/GamePageDesktopView.png "Game Page Desktop View")
+![Home Page Desktop View](./_docs/design/HomePageDesktopView.png "Home Page Desktop View")
 
 ## To be devloped
 
