@@ -4,7 +4,7 @@
 
 ![Game Page Movile View](./_docs/design/GamePageMovileView.png "Game Page Movile View")
 ![Game Page Movile View](./_docs/design/HomePageMovileLinkView.png "Game Page Movile View")
-![Game Page Movile View](./_docs/design/HomePageDesktopView.png "Game Page Movile View")
+![Game Page Movile View](./_docs/design/HomePageMovileView.png "Game Page Movile View")
 
 ## Funtionality
 
