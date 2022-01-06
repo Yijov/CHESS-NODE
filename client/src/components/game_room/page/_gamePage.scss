@@ -1,3 +1,8 @@
+@import "../menu/menu";
+@import "../chat/chatWindow";
+@import "../clock/clock";
+@import "../result_window/result_window";
+
 #game-page {
   display: flex;
   flex-wrap: wrap;
@@ -6,10 +11,6 @@
   border: 2px solid white;
   overflow: hidden;
 }
-
-@import "../menu/menu";
-@import "../chat/chatWindow";
-@import "../clock/clock";
 
 @media screen and (min-width: 840px) {
   #game-page {

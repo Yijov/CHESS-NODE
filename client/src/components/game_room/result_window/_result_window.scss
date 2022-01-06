@@ -1,0 +1,43 @@
+#game-result-window {
+  position: absolute;
+  top: 20%;
+  z-index: 10;
+  height: 40%;
+  width: 95%;
+  max-width: 390px;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $color_main;
+  background-color: $color_soft_background;
+  box-shadow: $BoxShadow;
+  #game-over_title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  #game-over-reason__message {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  #rematch__button,
+  #reset__button {
+    @include DarkButton;
+    @include MidSizeButton;
+    margin-top: 0.5rem;
+    border-radius: 3px;
+    &:hover {
+      background-color: $color_highlight;
+    }
+  }
+}
+
+@media screen and (min-width: 840px) {
+  #game-result-window {
+    top: 25%;
+    left: 22%;
+    height: 40%;
+    width: 25%;
+  }
+}

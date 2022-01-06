@@ -1,4 +1,6 @@
-import IChatMessage from "../../../models/IChatMessage";
-const chatInitialState: Array<IChatMessage> = [];
+import IChatState from "../abstraction/IChatState";
+const chatInitialState: IChatState = {
+  feed: [],
+};
 
 export default chatInitialState;

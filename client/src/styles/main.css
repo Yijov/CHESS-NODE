@@ -204,23 +204,12 @@
   background-color: white;
 }
 
-#game-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-  border: 2px solid white;
-  overflow: hidden;
-}
-
 #game-room_menu {
   height: 2.5rem;
-  width: 100%;
+  width: 99%;
   margin-bottom: 3px;
   color: lightgray;
+  border: 2px solid gray;
   background-color: #001433;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -243,6 +232,10 @@
   color: white;
 }
 
+#game-room_menu #game-on {
+  color: green;
+}
+
 #chat_container {
   height: 13rem;
   width: 100%;
@@ -261,7 +254,8 @@
 }
 
 #chat_container #chat-message-box .received-message,
-#chat_container #chat-message-box .sent-message {
+#chat_container #chat-message-box .sent-message,
+#chat_container #chat-message-box #draw-offer__message {
   width: 60%;
   padding: 0.5rem;
   padding-left: 1.5rem;
@@ -282,6 +276,40 @@
   background-color: lightgray;
   color: black;
   margin-bottom: 2rem;
+}
+
+#chat_container #chat-message-box #draw-offer__message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #0066ff;
+  margin: auto;
+}
+
+#chat_container #chat-message-box #draw-offer__message button {
+  height: 1.5rem;
+  width: 2rem;
+  border-radius: 6px;
+  padding: 0.1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  cursor: pointer;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#chat_container #chat-message-box #draw-offer__message #accept__button {
+  background-color: green;
+}
+
+#chat_container #chat-message-box #draw-offer__message #reject__button {
+  background-color: red;
 }
 
 #chat_container #chat_input_form {
@@ -320,7 +348,7 @@
   padding: 0.4rem;
   cursor: pointer;
   width: 3.3rem;
-  height: 2rem;
+  height: 2.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,7 +374,7 @@
   }
   #chat_container #chat-message-box {
     width: 100%;
-    height: 92%;
+    height: 93%;
   }
 }
 
@@ -411,6 +439,82 @@
   font-size: 2rem;
 }
 
+#game-result-window {
+  position: absolute;
+  top: 20%;
+  z-index: 10;
+  height: 40%;
+  width: 95%;
+  max-width: 390px;
+  margin: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #001433;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#game-result-window #game-over_title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#game-result-window #game-over-reason__message {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+#game-result-window #rematch__button,
+#game-result-window #reset__button {
+  background-color: #001433;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 0.4rem;
+  cursor: pointer;
+  width: 6rem;
+  margin-top: 0.5rem;
+  border-radius: 3px;
+}
+
+#game-result-window #rematch__button:hover,
+#game-result-window #reset__button:hover {
+  background-color: #0066ff;
+}
+
+@media screen and (min-width: 840px) {
+  #game-result-window {
+    top: 25%;
+    left: 22%;
+    height: 40%;
+    width: 25%;
+  }
+}
+
+#game-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  border: 2px solid white;
+  overflow: hidden;
+}
+
 @media screen and (min-width: 840px) {
   #game-page {
     -webkit-box-orient: horizontal;
@@ -421,6 +525,38 @@
         -ms-flex-pack: center;
             justify-content: center;
     background-color: #000a1a;
+  }
+}
+
+.spinner {
+  border: 4px solid lightgray;
+  border-left-color: transparent;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 

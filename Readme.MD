@@ -2,7 +2,7 @@
 
     Online multiplayer chess game with live chat.
 
-## start the app
+## Start the app
 
     1. RUN `npm run dev` in the server forder
     2. RUN `npm npm start` in the client folder
@@ -15,9 +15,10 @@
 - [x] Users can talk to each other via live chat during the game
 - [x] Users can resign a game
 - [x] Users can send and accept draw offers
-- [x] Users can send and accept rematch offers
-- [x] The pieces can be moved via drag and drop or by click on individual squares
+- [x] Users can rematch
+- [x] The pieces can be moved via drag and drop or by click on squares
 - [x] UI is respondive
+- [x] chess clock
 
   ![Game Page Movile View](./_docs/design/GamePageMovileView.png "Game Page Movile View")
   ![Home Page Movile View](./_docs/design/HomePageMovileLinkView.png "Home Page Movile View")
@@ -27,15 +28,10 @@
 
 ## To be devloped
 
-- [ ] start game functionality
-- [ ] rematch offer and accept functionality
-- [ ] resignation functionality
-- [ ] draw offer and accept functionality
-- [ ] game over functionality
-- [ ] tostify/comunication functionality
-- [ ] imagenes de portada readme
-
 - [ ] clock funtionality
-- [ ] Promotion selection
-- [ ] Cache garbage collector
-- [ ] sounds f
+- [ ] Solve warnings
+
+- [ ] selection promotion piece instead of auto-queen
+- [ ] change board color
+- [ ] sound integration
+- [ ] Cache garbage collector for the room sesions

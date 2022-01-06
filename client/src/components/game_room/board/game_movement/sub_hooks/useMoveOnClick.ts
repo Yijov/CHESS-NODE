@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IMoveImput } from "../../../../models";
+import { IMoveImput } from "../../../../../models";
 import { Square } from "chess.js";
 
 interface movment {
@@ -14,7 +14,7 @@ const defaultState = {
   piece: "",
 };
 
-export const useMoveOnClick = (MovementFunction: (moveImput: IMoveImput) => boolean) => {
+const useMoveOnClick = (MovementFunction: (moveImput: IMoveImput) => boolean) => {
   const [ShortMove, setShortMove] = useState<movment>(defaultState);
   //const TOUCHEDPIECE = () => {};
   const ON_SQUARE_CLICK = async (square: string) => {
@@ -34,11 +34,6 @@ export const useMoveOnClick = (MovementFunction: (moveImput: IMoveImput) => bool
     }
   };
 
-  const ON_PIECE_CLICK = (piece: string) => {
-    if (!ShortMove.piece) {
-      setShortMove({ ...ShortMove, piece: piece });
-    }
-  };
-
-  return { ON_SQUARE_CLICK, ON_PIECE_CLICK };
+  return { ON_SQUARE_CLICK };
 };
+export default useMoveOnClick;

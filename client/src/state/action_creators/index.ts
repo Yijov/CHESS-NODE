@@ -1,3 +1,2 @@
-export { default as ReceiveChatCreator } from "./chat_action_creators/receiveChat";
-export { default as SendChatCreator } from "./chat_action_creators/sendChat";
-export { default as MOveCreator } from "./game_action_creator/Move";
+export { default as GameActions } from "./game_action_creator";
+export { default as ChatActions } from "./chat_action_creators";

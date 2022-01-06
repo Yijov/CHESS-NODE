@@ -32,7 +32,7 @@ class CurrentGamesCache {
     return;
   };
 
-  public removeeOne = async (room: IGameRoom) => {
+  public removeOne = async (room: IGameRoom) => {
     //validate if room exists
     let roomtobeUpdated = await this.current_games_Repo.find(
       (game: IGameRoom) => game.roomId === room.roomId
