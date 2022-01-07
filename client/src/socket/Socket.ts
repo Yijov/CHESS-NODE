@@ -1,5 +1,6 @@
 import io from "socket.io-client";
-const severAddress = "http://localhost:3001";
+import app_constants from "../constants/constants";
+const severAddress = app_constants.APP_URL;
 const socket = io(severAddress);
 
 export default socket;

@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import app_constants from "../../../constants/constants";
 import makeid from "../../../utils/MakeId";
 import { AiOutlineCopy } from "react-icons/ai";
 
 const RoomLinkPannel: React.FC = () => {
   const [Link, setLink] = useState("");
   const [DorwardLink, setorwardLink] = useState("");
-  const gameroute = "gameroom";
+  const gameroute = app_constants.GAME_ROOM_PATH;
 
   let Navigate = useNavigate();
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
