@@ -33,12 +33,19 @@ const Menu: React.FC<{ BoardObject: ChessInstance }> = ({ BoardObject }) => {
 
   return (
     <div id="game-room_menu">
+      {/* block menu functions during the game */}
       {game.inProgress ? (
-        <AiFillBulb className="icon" id="game-on" title="Start" />
+        <>
+          <AiFillBulb className="icon" id="game-on" title="Start" />
+          <MdTimer title="Clock Setting" className="icon" />
+        </>
       ) : (
-        <BsFillPlayFill className="icon" title="Start" onClick={StartGame} />
+        <>
+          <BsFillPlayFill className="icon" title="Start" onClick={StartGame} />
+          <MdTimer title="Clock Setting" className="icon" onClick={changeTimeFormat} />
+        </>
       )}
-      <MdTimer title="Clock Setting" className="icon" onClick={changeTimeFormat} />
+
       <HiOutlineSwitchVertical
         title="Change orientation"
         className="icon"
