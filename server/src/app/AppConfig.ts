@@ -19,7 +19,7 @@ export default class AppConfig {
     this.app.use(morgan("dev"));
     this.app.use(cors(Constants.corsOptions));
     this.app.use(cookieParser());
-    this.app.use(Constants.APIgeneralRoute, RestRouter);
+    this.app.use("/api", RestRouter);
     this.app.use("*", ErrorHandler.NotFoundRouteHandler);
     this.app.use(ErrorHandler.ExeptionHandler);
   }
