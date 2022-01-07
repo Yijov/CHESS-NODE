@@ -5,13 +5,14 @@ import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
+import path from "path";
 import ErrorHandler from "../errors/ErrorHandler";
 import Constants from "../config/constanst";
 
 export default class AppConfig {
   protected app: Express = express();
   constructor() {
-    this.app.use(express.static(__dirname + "/public"));
+    this.app.use(express.static(path.join(__dirname, "public")));
     this.app.use("/*", express.static(__dirname + "/public"));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
