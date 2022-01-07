@@ -12,7 +12,7 @@ export default class AppConfig {
   protected app: Express = express();
   constructor() {
     this.app.use(express.static(__dirname + "/public"));
-    //this.app.use("/*", express.static(__dirname + "/public"));
+    this.app.use("/*", express.static(__dirname + "/public"));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(helmet());
