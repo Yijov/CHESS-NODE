@@ -1,20 +1,28 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import GameActionCreators from "../../../state/action_creators/game_action_creator";
+import { GameActions, ClockActions } from "../../../state/action_creators";
 import { State } from "../../../state/reducers";
 import { socket, events } from "../../../socket";
 import { ChessInstance } from "chess.js";
 import { useParams } from "react-router-dom";
+import { INewGameDTO } from "../../../models";
 
 const ResultWindow: React.FC<{ BoardObject: ChessInstance }> = ({ BoardObject }) => {
   const URLParams = useParams();
-  const gameState = useSelector((state: State) => state.game);
+  const { game, clock } = useSelector((state: State) => state);
   const dispatch = useDispatch();
-  const { NewGame, Reset } = bindActionCreators(GameActionCreators, dispatch);
+  const { NewGame, Reset } = bindActionCreators(GameActions, dispatch);
+  const { ResetTimer } = bindActionCreators(ClockActions, dispatch);
 
   const startnewGame = () => {
-    socket.emit(events.NEW_GAME, URLParams.roomid!!);
+    ResetTimer();
+    let data: INewGameDTO = {
+      roomID: URLParams.roomid!!,
+      clockParams: { initialTime: clock.initialTime, increment: clock.increment },
+    };
+
+    socket.emit(events.NEW_GAME, data);
     BoardObject.reset();
     NewGame();
   };
@@ -23,10 +31,10 @@ const ResultWindow: React.FC<{ BoardObject: ChessInstance }> = ({ BoardObject })
     Reset();
   };
 
-  return gameState.gameOver ? (
+  return game.gameOver ? (
     <div id="game-result-window">
       <h2 id="game-over_title">Game Over!</h2>
-      <h3 id="game-over-reason__message">{gameState.gameOverReason}</h3>
+      <h3 id="game-over-reason__message">{game.gameOverReason}</h3>
       <button id="rematch__button" onClick={startnewGame}>
         Rematch
       </button>

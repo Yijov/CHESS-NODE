@@ -1,10 +1,14 @@
 import { Socket } from "socket.io";
-import { IMove, IChatMessage, IMoveImput } from "../models";
+import { IMove, IChatMessage, IMoveImput, INewGameDTO, GameRoom, IClockUpdateDTO } from "../models";
 import events from "../enums/Events";
-import GamesCache from "../persistnce/cache/CurrentGamesCache";
+import CurrentGamesCache from "../persistnce/cache/CurrentGamesCache";
+import { autoInjectable, singleton } from "tsyringe";
 
+@autoInjectable()
+@singleton()
 class GameRoomService {
-  constructor() {}
+  constructor(private GamesCache: CurrentGamesCache) {}
+
   public JOIN_GAME(socket: Socket, roomId: string) {
     socket.join(roomId);
     //refresh the position on reconection
@@ -13,8 +17,23 @@ class GameRoomService {
     socket.broadcast.to(message.room).emit(events.CHAT_MESSAGE, message);
   }
 
+  public UPDATE_GAME(roomId: string, updateBoard: Function) {
+    const game = this.GamesCache.findById(roomId);
+    if (game) {
+      updateBoard(game);
+    }
+  }
+
+  public UPDATE_TIME(roomId: string, updateTime: Function) {
+    const game = this.GamesCache.findById(roomId);
+    if (game) {
+      const { increment, initialTime, whiteTime, blacktime, blackTurn } = game.clock;
+      updateTime({ increment, initialTime, whiteTime, blacktime, blackTurn });
+    }
+  }
+
   public MOVE(socket: Socket, move: IMove) {
-    const game = GamesCache.findById(move.room);
+    const game = this.GamesCache.findById(move.room);
     //translate to in order to send to the other player
     let movetoEmit: IMoveImput = {
       targetSquare: move.targetSquare,
@@ -26,56 +45,35 @@ class GameRoomService {
     if (game) {
       game.moves.push(movetoEmit);
       game.currentPosition = move.newfen;
-      GamesCache.updateOne(game);
-    } else {
-      //if game is new
-      GamesCache.updateOne({
-        roomId: move.room,
-        currentPosition: move.newfen,
-        moves: [movetoEmit],
-        inProgress: true,
-        gameOver: false,
-        gameOverReason: undefined,
-      });
+      game.clock.switchTurn();
+      this.GamesCache.updateOne(game);
     }
-
     //emiting move to oponent
     socket.broadcast.to(move.room).emit(events.MOVE, movetoEmit);
   }
 
-  public UPDATE_GAME(socket: Socket, roomId: string, updateBoard: Function) {
-    const game = GamesCache.findById(roomId);
+  public START_NEW_GAME(socket: Socket, data: INewGameDTO) {
+    const game = this.GamesCache.findById(data.roomID);
     if (game) {
-      updateBoard(game);
+      this.GamesCache.updateOne(new GameRoom(game.roomId, game.clock.clockSettings));
+    } else {
+      this.GamesCache.addOne(
+        new GameRoom(data.roomID, {
+          initialTime: data.clockParams.initialTime,
+          increment: data.clockParams.increment,
+        })
+      );
     }
-  }
-
-  public START_NEW_GAME(socket: Socket, room: string) {
-    const game = GamesCache.findById(room);
-    if (game) {
-      GamesCache.updateOne({
-        roomId: room,
-        currentPosition: "start",
-        moves: [],
-        inProgress: true,
-        gameOver: false,
-        gameOverReason: undefined,
-      });
-    }
-    socket.broadcast.to(room).emit(events.NEW_GAME);
+    socket.broadcast.to(data.roomID).emit(events.NEW_GAME);
   }
 
   public RESIGNATION(socket: Socket, room: string) {
-    const game = GamesCache.findById(room);
+    const game = this.GamesCache.findById(room);
     if (game) {
-      GamesCache.updateOne({
-        roomId: room,
-        currentPosition: game.currentPosition,
-        moves: game.moves,
-        inProgress: false,
-        gameOver: true,
-        gameOverReason: "Player has resigned",
-      });
+      game.inProgress = false;
+      game.gameOver = true;
+      game.gameOverReason = "Player has resigned";
+      this.GamesCache.updateOne(game);
       socket.broadcast.to(room).emit(events.RESIGNATION);
     }
   }
@@ -89,19 +87,15 @@ class GameRoomService {
   }
 
   public DRAW_ACCEPT(socket: Socket, roomId: string) {
-    const game = GamesCache.findById(roomId);
+    const game = this.GamesCache.findById(roomId);
     if (game) {
-      GamesCache.updateOne({
-        roomId: roomId,
-        currentPosition: game.currentPosition,
-        moves: game.moves,
-        inProgress: false,
-        gameOver: true,
-        gameOverReason: "Draw Agreed",
-      });
+      game.inProgress = false;
+      game.gameOver = true;
+      game.gameOverReason = "Draw Agreed";
+      this.GamesCache.updateOne(game);
       socket.broadcast.to(roomId).emit(events.DRAW_ACCEPT);
     }
   }
 }
 
-export default new GameRoomService();
+export default GameRoomService;

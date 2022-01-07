@@ -1,4 +1,5 @@
 import { IMoveImput } from ".";
+import { ChessClock } from ".";
 
 export default interface IGameRoom {
   roomId: string;
@@ -7,4 +8,5 @@ export default interface IGameRoom {
   inProgress: boolean;
   gameOver: boolean;
   gameOverReason: String | undefined;
+  clock: ChessClock;
 }

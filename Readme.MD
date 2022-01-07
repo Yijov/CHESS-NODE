@@ -10,7 +10,7 @@
 ## Funtionality
 
 - [x] Users can play chess online with each other
-- [x] Users can create an invitation link witch can be sent to non registerd friend in order to play.
+- [x] Users can create an invitation link witch can be sent to a non registerd friend in order to play.
 - [x] An espectator can enter using the invitation link and watch the game.
 - [x] Users can talk to each other via live chat during the game
 - [x] Users can resign a game
@@ -24,14 +24,13 @@
   ![Home Page Movile View](./_docs/design/HomePageMovileLinkView.png "Home Page Movile View")
 
 ![Game Page Desktop View](./_docs/design/GamePageDesktopView.png "Game Page Desktop View")
+![Game Page Desktop View](./_docs/design/GamePageDesktopView2.png "Game Page Desktop View")
 ![Home Page Desktop View](./_docs/design/HomePageDesktopView.png "Home Page Desktop View")
 
 ## To be devloped
 
-- [ ] clock funtionality
-- [ ] Solve warnings
-
-- [ ] selection promotion piece instead of auto-queen
+- [ ] Solve odd warnings
+- [ ] select promotion piece instead of auto-queen
 - [ ] change board color
 - [ ] sound integration
 - [ ] Cache garbage collector for the room sesions

@@ -52,7 +52,7 @@ there is no need to emit since it will do the same for received moves.*/
     } else if (this.BoardPosition.in_stalemate()) {
       return "Draw by stalemate";
     } else {
-      return "Draw";
+      return "Draw agreed";
     }
   };
 }

@@ -5,7 +5,7 @@ import { Socket } from "socket.io-client";
 import { IMoveImput } from "../../../../../models";
 import IGameRoom from "../../../../../models/IGameRoom";
 import { events } from "../../../../../socket";
-import { GameActions } from "../../../../../state/action_creators";
+import { GameActions, ClockActions } from "../../../../../state/action_creators";
 import { ChessInstance } from "chess.js";
 
 const useOponentListening = (
@@ -16,13 +16,14 @@ const useOponentListening = (
 ) => {
   const dispatch = useDispatch();
   const { GameOver, UpdateGame, NewGame } = bindActionCreators(GameActions, dispatch);
+  const { ResetTimer } = bindActionCreators(ClockActions, dispatch);
+
   //put game back on trackin case of reload or lost conection
   const UPDATE_GAME = async (room: IGameRoom) => {
     const moves = room.moves;
     if (moves.length > 0) {
       moves.forEach((move) => MOVE_WITHOUT_EMITING(move));
     }
-
     UpdateGame(room);
   };
 
@@ -41,6 +42,7 @@ const useOponentListening = (
     });
 
     socket.on(events.NEW_GAME, () => {
+      ResetTimer();
       noardObject.reset();
       NewGame();
     });

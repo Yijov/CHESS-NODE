@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node .dist/index.js",
     "dev": "nodemon src/index.ts",
+    "play": "nodemon timer.ts",
     "build": "tsc -p .",
     "test": "jest"
   },

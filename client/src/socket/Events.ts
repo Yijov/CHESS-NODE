@@ -8,6 +8,7 @@ enum events {
   DRAW_REJECT = "DRAW REJECT",
   DRAW_ACCEPT = "DRAW ACCEPT",
   CHAT_MESSAGE = "CHAT MESSAGE",
+  UPDATE_TIME = "UPDATE TIME",
 }
 
 export default events;
