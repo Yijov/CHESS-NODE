@@ -20,9 +20,13 @@ export default class App extends AppConfig {
     return this.app;
   }
   public start = async () => {
-    this.IO.on("connection", this.GameController.connectionHandler);
-    this.server.listen(constants.defaultPort, () => {
-      console.log(`Application running on port ${constants.defaultPort}`);
-    });
+    try {
+      this.IO.on("connection", this.GameController.connectionHandler);
+      this.server.listen(constants.defaultPort, () => {
+        console.log(`Application running on port ${constants.defaultPort}`);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
