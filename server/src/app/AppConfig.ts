@@ -11,9 +11,14 @@ import Constants from "../config/constanst";
 
 export default class AppConfig {
   protected app: Express = express();
+  private appPath = path.join(__dirname, "public");
+  private StaticappPath = path.join(__dirname, "public", "static");
   constructor() {
-    this.app.use(express.static(path.join(__dirname, "public")));
-    this.app.use("/*", express.static(path.join(__dirname, "public")));
+    console.log(process.cwd());
+
+    this.app.use(express.static(this.appPath));
+    this.app.use("/static", express.static(this.StaticappPath));
+    this.app.use("/*", express.static(this.appPath));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(helmet());
