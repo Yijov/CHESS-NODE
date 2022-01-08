@@ -5,8 +5,8 @@ import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
-import path from "path";
 import ErrorHandler from "../errors/ErrorHandler";
+import path from "path";
 import Constants from "../config/constanst";
 
 export default class AppConfig {
