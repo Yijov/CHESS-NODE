@@ -14,6 +14,9 @@ export default class AppConfig {
   private publicDirPath = path.join(__dirname, "public");
   private StaticappPath = path.join(__dirname, "public", "static");
   constructor() {
+    console.log(__dirname);
+    console.log(process.cwd());
+
     this.app.use(express.static(this.publicDirPath));
     this.app.use("/static", express.static(this.StaticappPath));
     this.app.use("/*", express.static(this.publicDirPath));

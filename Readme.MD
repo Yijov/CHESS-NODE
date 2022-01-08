@@ -27,6 +27,11 @@
 ![Game Page Desktop View](./_docs/design/GamePageDesktopView2.png "Game Page Desktop View")
 ![Home Page Desktop View](./_docs/design/HomePageDesktopView.png "Home Page Desktop View")
 
+## Depploied at
+
+Frontend https://chess-node9.herokuapp.com/
+Backend https://chess-node7.herokuapp.com/
+
 ## To be devloped
 
 - [ ] Solve odd warnings
