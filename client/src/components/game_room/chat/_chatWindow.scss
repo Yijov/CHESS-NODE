@@ -1,5 +1,6 @@
 #chat_container {
-  height: 13rem;
+  height: 30%;
+  max-height: 13rem;
   width: 100%;
   max-width: 390px;
   border-radius: 5px;
@@ -98,6 +99,7 @@
 @media screen and (min-width: 840px) {
   #chat_container {
     height: 95%;
+    max-height: 100%;
     margin-left: 1rem;
     padding: 0%;
     margin-top: 0.2rem;

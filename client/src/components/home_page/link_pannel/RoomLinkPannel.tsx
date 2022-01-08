@@ -31,6 +31,7 @@ const RoomLinkPannel: React.FC = () => {
 
   useEffect(() => {
     generateLink();
+    // eslint-disable-next-line
   }, []);
 
   return (
