@@ -1,4 +1,5 @@
 require("dotenv").config();
+import * as path from "path";
 import express, { Express } from "express";
 import RestRouter from "../api/router/Router";
 import morgan from "morgan";
@@ -6,7 +7,6 @@ import cors from "cors";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import ErrorHandler from "../errors/ErrorHandler";
-import path from "path";
 import Constants from "../config/constanst";
 
 export default class AppConfig {
