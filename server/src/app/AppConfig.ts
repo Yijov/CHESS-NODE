@@ -1,6 +1,6 @@
 require("dotenv").config();
 import * as path from "path";
-import express, { Express } from "express";
+import express, { Express, Request, Response } from "express";
 import RestRouter from "../api/router/Router";
 import morgan from "morgan";
 import cors from "cors";

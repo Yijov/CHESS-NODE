@@ -7,7 +7,7 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css src/**/*.map src/**/*.json src/**/*.ico src/**/*.ixt dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css src/**/*.map src/**/*.json src/**/*.ico src/**/*.txt dist/",
     "build": "npm run clean && tsc -p . && npm run copy-files",
     "test": "jest"
   },
